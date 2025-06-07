@@ -12,6 +12,20 @@
     <div id="login"></div>
     <div id="dashboard" style="display:none;"></div>
   </div>
-  <script src="script.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const loginDiv = document.getElementById("login");
+      const dashboardDiv = document.getElementById("dashboard");
+
+      loginDiv.innerHTML = '<button onclick="simulateLogin()">Login with OTP</button>';
+
+      window.simulateLogin = function () {
+        loginDiv.style.display = 'none';
+        dashboardDiv.style.display = 'block';
+        dashboardDiv.innerHTML = '<p>Welcome! Trade dashboard loading...</p>';
+      };
+    });
+  </script>
 </body>
 </html>
